@@ -1,0 +1,35 @@
+<div class="login_form">
+    <%= form_tag({ controller: @form_controller, action: @form_action }, { class: '' }) do %>
+      <%= content_tag(:table) do %>
+
+          <%= content_tag(:tr) do %>
+              <%= content_tag(:td) do %>
+                <%= label_tag 'Email:' %>
+              <% end %>
+
+              <%= content_tag(:td) do %>
+                <%= text_field_tag('login', nil, { class: 'text-box-style' }) %>
+              <% end %>
+          <% end %>
+
+          <%= content_tag(:tr) do %>
+              <%= content_tag(:td) do %>
+                  <%= label_tag 'Password:' %>
+              <% end %>
+
+              <%= content_tag(:td) do %>
+                  <%= password_field_tag('password', nil, { class: 'text-box-style' }) %>
+              <% end %>
+          <% end %>
+
+          <%= content_tag(:tr) do %>
+              <%= content_tag(:td, nil) %>
+
+              <%= content_tag(:td) do %>
+                  <%= submit_tag('Login', { class: 'button-style' }) %>
+              <% end %>
+          <% end %>
+
+      <% end %>
+    <% end %>
+</div>
