@@ -51,6 +51,8 @@ group :development, :test do
   gem 'shoulda-matchers'
 end
 gem 'capybara'
+gem 'selenium-webdriver'
+gem 'database_cleaner'
 
 # JavaScript runtime
 gem 'execjs'

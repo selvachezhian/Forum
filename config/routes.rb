@@ -57,6 +57,8 @@ App402::Application.routes.draw do
 
   resources :user do
     collection do
+      get 'index'
+
       post 'login'
     end
   end

@@ -7,8 +7,10 @@ class UserController < ApplicationController
   end
 
   def login
-    user = User.where(email: params[:login], password: Digest::MD5.hexdigest(params[:password]))
-    if user.present?
+    user = User.where(email: params[:login], password: Digest::MD5.hexdigest(params[:password])).first
+    puts User.count
+    puts ActiveRecord::Base.connection.current_database
+    if user
       redirect_to controller: 'forum', action: 'index'
     else
       flash[:error] = 'Username or Password does not match, please check again'
