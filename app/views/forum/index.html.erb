@@ -1,2 +1,11 @@
-<h1>Forum#index</h1>
-<p>Find me in app/views/forum/index.html.erb</p>
+<%= content_tag(:table, { class: 'common-table', border: '1' }) do %>
+    <%= content_tag(:tr) do %>
+        <%= content_tag(:th, 'Forum Name') %>
+        <%= content_tag(:th, '# Threads', { class: 'class-column' }) %>
+        <%= content_tag(:th, '# Posts', { class: 'class-column' }) %>
+    <% end %>
+
+    <%= render partial: 'forum', collection: @forums %>
+<% end %>
+
+<%= paginate @forums %>
